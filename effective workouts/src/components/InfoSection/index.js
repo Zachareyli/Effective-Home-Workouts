@@ -1,12 +1,18 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { Button } from '../ButtonElement'
 import { InfoContainer, InfoWrapper, InfoRow, Column1, TextWrapper, TopLine, Heading, Subtitle, BtnWrap, Column2, ImgWrap, Img } from './InfoElements'
-
+import 'aos/dist/aos.css';
+import Aos from 'aos';
 
 const InfoSection = ({ id, imgStart, topLine, headLine, description, buttonLabel, img, alt, primary}) => {
-  return (
+  
+    useEffect(() => {
+        Aos.init({duration: 3000});
+    },[])
+    return (
     <>
-        <InfoContainer id={id}>
+        <InfoContainer data-aos="zoom-out-up" id={id}>
             <InfoWrapper>
                 <InfoRow imgStart={imgStart}>
                     <Column1>

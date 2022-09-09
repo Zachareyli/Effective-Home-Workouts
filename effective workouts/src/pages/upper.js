@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import Video from'../videos/upper.mp4'
 import { Link as LinkR } from 'react-router-dom'
+import 'aos/dist/aos.css';
+import Aos from 'aos';
+import { useEffect } from 'react';
 
 const UpperWrapper = styled.div`
 display: flex;
@@ -104,15 +107,19 @@ color: orange;
 
 
 function UpperBody() {
-  
+
+  useEffect(() => {
+    Aos.init({duration: 2000});
+},[])
+
   return (
     <UpperWrapper>
         <UpperBox>
-            <UpperH1>Effective Upper Body Workouts</UpperH1>
-            <LowerH1>Biceps Curl</LowerH1>
-            <UpperP1>Stand with feet hip-width apart, holding a pair of dumbbells at sides. Palms should be facing forward, with back straight and chest upright. Without moving upper arms, bend elbows and curl weights toward shoulders. Slowly lower the dumbbells back to starting position with control. That's one rep.</UpperP1>
-            <UpperPhoto autoPlay loop muted src={Video} type='video/mp4'></UpperPhoto>
-            <UpperP1>If you want to get more awesome workouts like this please click here to continue...</UpperP1>
+            <UpperH1 data-aos="fade-left">Effective Upper Body Workouts</UpperH1>
+            <LowerH1 data-aos="fade-left">Biceps Curl</LowerH1>
+            <UpperP1 data-aos="fade-right">Stand with feet hip-width apart, holding a pair of dumbbells at sides. Palms should be facing forward, with back straight and chest upright. Without moving upper arms, bend elbows and curl weights toward shoulders. Slowly lower the dumbbells back to starting position with control. That's one rep.</UpperP1>
+            <UpperPhoto data-aos="fade-right" autoPlay loop muted src={Video} type='video/mp4'></UpperPhoto>
+            <UpperP1 data-aos="fade-left">If you want to get more awesome workouts like this please click here to continue...</UpperP1>
             <Home to='signin'>More ></Home>
         </UpperBox>
     </UpperWrapper>

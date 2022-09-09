@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import Video from'../videos/lowerbody2.mp4'
 import { Link as LinkR } from 'react-router-dom'
+import 'aos/dist/aos.css';
+import Aos from 'aos';
+import { useEffect } from 'react';
 
 const UpperWrapper = styled.div`
 display: flex;
@@ -110,14 +113,19 @@ color: pink;
 
 
 function LowerBody() {
+  
+  useEffect(() => {
+    Aos.init({duration: 2000});
+},[])
+
   return (
     <UpperWrapper>
         <UpperBox>
-            <UpperH1>Effective Upper Body Workouts</UpperH1>
-            <LowerH1>Squats</LowerH1>
-            <UpperP1>Start standing with feet hip-distance apart, toes pointed out slightly. Keeping the head in line with the tailbone, shift hips back and bend at knees. Lower down until thighs are parallel with floor. Drive up through heels to return to standing. That's one rep. Perform 15, then continue on to your next move, resting as needed. After you've finished all of your exercises (three total), repeat the entire workout twice more for a total of three rounds.</UpperP1>
-            <UpperPhoto autoPlay loop muted src={Video} type='video/mp4'></UpperPhoto>
-            <UpperP1>If you want to get more awesome workouts like this please click here to continue...</UpperP1>
+            <UpperH1 data-aos="fade-left">Effective Upper Body Workouts</UpperH1>
+            <LowerH1 data-aos="fade-left">Squats</LowerH1>
+            <UpperP1 data-aos="fade-right">Start standing with feet hip-distance apart, toes pointed out slightly. Keeping the head in line with the tailbone, shift hips back and bend at knees. Lower down until thighs are parallel with floor. Drive up through heels to return to standing. That's one rep. Perform 15, then continue on to your next move, resting as needed. After you've finished all of your exercises (three total), repeat the entire workout twice more for a total of three rounds.</UpperP1>
+            <UpperPhoto data-aos="fade-left" autoPlay loop muted src={Video} type='video/mp4'></UpperPhoto>
+            <UpperP1 data-aos="fade-right">If you want to get more awesome workouts like this please click here to continue...</UpperP1>
             <Home to='signin'>More ></Home>
         </UpperBox>
     </UpperWrapper>

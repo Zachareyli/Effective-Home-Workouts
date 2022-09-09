@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link as LinkR } from 'react-router-dom'
 import img from '../images/diet.jpg'
+import 'aos/dist/aos.css';
+import Aos from 'aos';
+import { useEffect } from 'react';
 
 const UpperWrapper = styled.div`
 display: flex;
@@ -97,13 +100,18 @@ color: lightseagreen;
 } `
 
 
-function Diet() {
+function Diet() {   
+  
+  useEffect(() => {
+      Aos.init({duration: 2000});
+  },[])
   return (
+ 
     <UpperWrapper>
         <UpperBox>
-            <UpperH1>Effective Upper Body Workouts</UpperH1>
-            <LowerH1>Diet</LowerH1>
-            <UpperP1>The purpose of post-workout nutrition is two-fold, firstly, to promote muscle recovery and secondly to replenish energy. Therefore, the focus should once again be on consuming good quality protein and carb foods.
+            <UpperH1 data-aos="fade-left">Effective Upper Body Workouts</UpperH1>
+            <LowerH1 data-aos="fade-left">Diet</LowerH1>
+            <UpperP1 data-aos="fade-right">The purpose of post-workout nutrition is two-fold, firstly, to promote muscle recovery and secondly to replenish energy. Therefore, the focus should once again be on consuming good quality protein and carb foods.
 
 As previously reflected on, the stress of training causes micro tears to occur to the muscles that must be repaired. So, consuming protein will cause a process known as muscle protein synthesis (MPS) to occur accordingly. It will also begin the repairing process and prevent muscle breakdown.
 
@@ -114,7 +122,7 @@ Therefore, High-protein foods such as lean beef, chicken, pork, turkey, eggs, da
 Carbohydrates should also form part of post-workout nutrition as the energy that has been expended during exercise must be replaced. Your Gym Diet plan for muscle gain must include the necessary nutrients.
 
 Also for a proper Gym diet plan, it is advised to consume protein and carbs together as this will have the most pronounced impact on recovery. Thus, this enhances protein and glycogen (energy) synthesis. Moreover, a ratio of 3:1 carb to protein is prescribed for optimizing recovery.</UpperP1>
-            <UpperPhoto src={img} alt='diet'/>
+            <UpperPhoto data-aos="fade-left"src={img} alt='diet'/>
             <UpperP1>If you want an ideal 7 day gym diet chart plan click here...</UpperP1>
             <Home to='signin'>More ></Home>
         </UpperBox>

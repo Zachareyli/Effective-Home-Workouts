@@ -9,6 +9,7 @@ import { homeObjOne } from '../components/InfoSection/Data';
 import { homeObjTwo } from '../components/MoreInfo/MoreData';
 import Services from '../components/Services';
 import Footer from '../components/Footer';
+// import Background from '../components/Background';
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
 
   return (
     <>
+    {/* <Background/> */}
     <SideBar isOpen={isOpen} toggle={toggle}/>
     <Navbar toggle={toggle}/>
     <HeroSection />

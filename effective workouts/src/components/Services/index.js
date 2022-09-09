@@ -1,13 +1,21 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { ServicesContainer, ServicesH1, ServicesIcon, ServicesWrapper, ServicesCard, ServicesH2, ServicesP } from '../Services/ServicesElements'
 import Icon1 from '../../images/svg-upper.svg'
 import Icon2 from '../../images/svg-lower.svg'
 import Icon3 from '../../images/svg-diet.svg'
+import 'aos/dist/aos.css';
+import Aos from 'aos';
 // import { Link as LinkR } from 'react-router-dom'
 
 function Services() {
+
+    useEffect(() => {
+        Aos.init({duration: 1000});
+    },[])
+
   return (
-    <ServicesContainer id='services'>
+    <ServicesContainer data-aos="zoom-in-up" id='services'>
         <ServicesH1>Our Services</ServicesH1>
         <ServicesWrapper>
             <ServicesCard to='upperbody'>

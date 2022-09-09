@@ -1,12 +1,18 @@
-import React from 'react'
+import { React, useEffect } from 'react'
+import 'aos/dist/aos.css';
+import Aos from 'aos';
 // import { Button } from '../ButtonElement'
 // import styled from 'styled-components'
 import {  InfoContainer, InfoWrapper, InfoRow, Column1, TextWrapper, TopLine, Heading, Subtitle, Column2, ImgWrap, Img } from './MoreInfoElements'
 
-const MoreInfo = ({ imgStart, topLine, headLine, description, primary, id, img, alt}) => {
-  return (
+const MoreInfo = ({ imgStart, topLine, headLine, description, id, img, alt}) => {
+    useEffect(() => {
+        Aos.init({duration: 3000});
+    },[])
+
+    return (
     <>
-        <InfoContainer id={id}>
+        <InfoContainer data-aos="zoom-out-up" id={id}>
             <InfoWrapper>
                 <InfoRow imgStart={imgStart}>
                     <Column1>
@@ -14,9 +20,6 @@ const MoreInfo = ({ imgStart, topLine, headLine, description, primary, id, img, 
                             <TopLine>{topLine}</TopLine>
                             <Heading>{headLine}</Heading>
                             <Subtitle>{description}</Subtitle>
-                            {/* <BtnWrap>
-                                <BtnLink to='/signin' primary={primary ? 1 : 0}>{buttonLabel}</BtnLink>
-                            </BtnWrap> */}
                         </TextWrapper>
                     </Column1>
                     <Column2>
