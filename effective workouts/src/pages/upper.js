@@ -104,6 +104,7 @@ color: orange;
 
 
 function UpperBody() {
+  
   return (
     <UpperWrapper>
         <UpperBox>

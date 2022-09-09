@@ -1,5 +1,5 @@
 export const homeObjTwo = {
-    id: 'discover',
+    // id: 'discover',
     topLine: '...',
     headLine: 'Get Moving!!!',
     description: 'Whether you’re into bodybuilding, power lifting, strength training or just getting started, these workouts and tips will help you reach your goals.',
